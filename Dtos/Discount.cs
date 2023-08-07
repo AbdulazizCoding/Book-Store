@@ -9,8 +9,8 @@ public class Discount
   public int? authorId { get; set; }
   [Required]
   public int percentage { get; set; }
+
+  [Required] public DateTime? startDate { get; set; } = DateTime.Parse("2023-08-08T12:57:22Z");
   [Required]
-  public string? startDate { get; set; }
-  [Required]
-  public string? endDate { get; set; }
+  public DateTime? endDate { get; set; } = DateTime.Parse("2023-08-08T12:57:22Z");
 }

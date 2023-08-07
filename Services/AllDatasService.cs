@@ -68,11 +68,8 @@ public class AllDatasService : IAllDatasService
     if (model.percentage <= 0 )
       throw new Exception("Foiz 0 dan katta bo'lishi kerak");
 
-    /*var startDate = DateTime.Parse(model.startDate);
-    var endDate = DateTime.Parse(model.endDate);*/
-
-    var startDate = DateTime.UtcNow.AddDays(1);
-    var endDate = DateTime.UtcNow.AddDays(7);
+    var startDate = model.startDate;
+    var endDate = model.endDate;
     
     if (startDate < DateTime.UtcNow)
       throw new Exception("Boshlanish sana bugun yoki kelasi sana bo'lishi kerak!");
@@ -83,8 +80,8 @@ public class AllDatasService : IAllDatasService
     var newDiscount = new Entities.Discount()
     {
       percentage = model.percentage,
-      startDate = startDate,
-      endDate = endDate,
+      startDate = startDate ?? DateTime.UtcNow,
+      endDate = endDate ?? DateTime.UtcNow,
       isActve = true
     };
 

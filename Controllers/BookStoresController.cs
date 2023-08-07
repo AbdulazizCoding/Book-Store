@@ -1,4 +1,5 @@
-﻿using Book_Store.Dtos;
+﻿using System.Reflection.Metadata.Ecma335;
+using Book_Store.Dtos;
 using Book_Store.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -77,4 +78,8 @@ public class BookStoresController : ControllerBase
   [HttpGet("api/books/default")]
   public async Task<IActionResult> GetBooksDefault()
     => Ok(await service.GetAllDefaultBooks());
+
+  [HttpPost("select")]
+  public void Select([FromQuery] DateTime date)
+    => Ok(date);
 }
