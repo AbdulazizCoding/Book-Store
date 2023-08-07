@@ -1,0 +1,114 @@
+POST api/authors
+
+{
+  "name": "Alisher Navoiy"
+}
+
+201
+
+{
+  "id": 123
+}
+
+=========
+
+POST api/genres
+
+{
+  "name": "Badiy"
+}
+
+201
+
+{
+  "id": 123
+}
+
+=========
+
+POST api/publishers
+
+{
+  "name": "Sharq"
+}
+
+201
+
+{
+  "id": 123
+}
+
+=========
+
+POST api/discounts
+
+{
+  "bookId": 123,
+  "percentage": 30,
+  "startDate": "2023-08-03T10:42:08.078Z",
+  "endDate": "2023-08-03T10:42:08.078Z"
+}
+or
+{
+  "publisherId": 123,
+  "percentage": 20,
+  "startDate": "2023-08-03T10:42:08.078Z",
+  "endDate": "2023-08-03T10:42:08.078Z"
+}
+or
+{
+  "authorId": 123,
+  "percentage": 10,
+  "startDate": "2023-08-03T10:42:08.078Z",
+  "endDate": "2023-08-03T10:42:08.078Z"
+}
+
+201
+
+{
+  "id": 123
+}
+
+=========
+
+POST api/books
+
+{
+  "name": "Xamsa",
+  "authorId": 123,
+  "publisherId": 123,
+  "genreId": 123,
+  "year": 1987,
+  "price": 150000
+}
+
+201
+
+{
+  "id": 123
+}
+
+=========
+
+GET api/books
+
+params
+* name - kitob nomi bo'yicha
+* author - avtor ismi bo'yicha
+* publisher - nashriyot nomi bo'yicha
+* priceFrom , priceTo - narx boyicha
+* genre - janr boyicha 
+filter qilish imkoniyati
+
+200
+
+[
+  {
+    "name": "Xamsa",
+    "author": "Alisher Navoiy",
+    "publisher": "Sharq",
+    "year": 1987,
+    "genre": "Badiy"
+    "price": 105000
+  }
+]
