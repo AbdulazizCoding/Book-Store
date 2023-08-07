@@ -1,6 +1,5 @@
 ﻿using Book_Store.Data;
 using Book_Store.Dtos;
-using Book_Store.Entities;
 using Microsoft.EntityFrameworkCore;
 using Author = Book_Store.Dtos.Author;
 using Book = Book_Store.Dtos.Book;
@@ -350,7 +349,7 @@ public class AllDatasService : IAllDatasService
 
     foreach (var discount in discounts)
     {
-      if (discount.endDate > DateTime.UtcNow)
+      if (discount.endDate < DateTime.UtcNow)
         discount.isActve = false;
 
       if (discount.isActve = false)

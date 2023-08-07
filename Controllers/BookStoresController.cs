@@ -1,8 +1,5 @@
-﻿using System.Diagnostics.Contracts;
-using Book_Store.Dtos;
+﻿using Book_Store.Dtos;
 using Book_Store.Services;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Book_Store.Controllers;
